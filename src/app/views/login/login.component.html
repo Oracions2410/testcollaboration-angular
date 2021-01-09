@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="login.component.scss">
+<div class="screen-card">
+    <div class="head">
+        Authentification
+    </div>
+    <div [class]="loading ? 'content' : 'content start'">
+        <app-loading *ngIf="loading"></app-loading>
+        <div *ngIf="!loading && errors.status" class="custom-alert errors">{{errors.message}}</div>
+        <form *ngIf="!loading" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="group">
+                <label>Adresse Email</label>
+                <input type="text" [formControlName]="'email'"/>
+            </div>
+
+            <div class="group">
+                <label>Mot de passe</label>
+                <input type="password" [formControlName]="'password'" />
+            </div>
+
+            <div class="group">
+                <button class="custom-btn default-btn">Me connecter</button>
+            </div>
+        </form>
+    </div>
+    <div class="controls">
+        <button class="custom-btn default-btn">Connexion/Inscription avec google</button>
+    </div>
+</div>

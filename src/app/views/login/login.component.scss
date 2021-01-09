@@ -1,0 +1,31 @@
+@import '../../../assets/scss/partials/_variables.scss';
+
+form {
+  width: 100%;
+  margin-top: -16px;
+  padding: 2rem;
+
+  .group {
+    background-color: transparent;
+    margin: 16px 0;
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-family: $roboto;
+      color: $blue;
+    }
+
+    input {
+      width: 90%;
+      margin-left: 5%;
+      outline: none;
+      height: 30px;
+      border: 1px solid $dark;
+      background-color: $white;
+      color: #444;
+      font-size: 16px;
+      padding: 0 3px;
+    }
+  }
+}

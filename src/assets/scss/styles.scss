@@ -1,0 +1,179 @@
+@import '../scss/partials/variables';
+
+* {
+    box-sizing: border-box;
+
+    a {
+        color: $blue;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+html {
+    font-size: 62%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $Yusei;
+    margin: 0;
+    background-color: $blue!important;
+}
+
+#page {
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    #title {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 1rem;
+        color: $lighter;
+    }
+
+    .main {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: $white;
+        box-shadow: 0 2px 4px $dark;
+        border-radius: .5rem;
+        padding: 2rem;
+
+        .screen-card {
+            width: 100%;
+            height: 100%;
+
+            .head {
+                text-transform: uppercase;
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            .content {
+                background-color: $lighter;
+                width: 100%;
+                height: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-top: 2rem;
+
+                .user-image {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 150px;
+                    object-fit: cover;
+                }
+
+                .text {
+                    font-size: 1.4rem;
+                    font-family: $roboto;
+                    padding-top: 1rem;
+                    text-align: start;
+
+                    .username {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        width: 100%;
+                        text-align: center;
+                    }
+    
+                    .app-links {
+                        font-size: 1.2rem;
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .content.start {
+                justify-content: flex-start;
+                padding-top: 1rem;
+            }
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+
+            .loading {
+                color: $blue;
+                font-family: $roboto;
+            }
+        }
+    }
+
+}
+
+.custom-btn {
+    min-width: 150px;
+    min-height: 25px;
+    font-size: 1.4rem;
+    background-color: $lighter;
+    border: none;
+    box-shadow: 0 2px 4px $dark;
+    border-radius: .2rem;
+    transition: background  .3s;
+    transition: opacity .3s;
+    border: 1px solid $gray;
+    outline: none;
+    margin-bottom: .3rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.custom-btn.default-btn {
+    border-radius: 4px!important;
+    padding: .5rem 1rem;
+}
+
+.custom-btn.delete-btn, .custom-btn.default-btn {
+    background-color: $blue;
+    color: $white;
+    border-radius: 50px 0 5px 0;
+}
+
+.custom-btn.logout-btn {
+    background-color: $red;
+    border-radius: 0 0 50px 5px;
+}
+
+div.custom-alert {
+    width: 95%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    font-family: $roboto;
+    border: 1px solid $dark;
+}
+
+div.custom-alert.errors {
+    background-color: $red;
+    opacity: .8;
+}
+
+@media screen and (max-width: 500px) {
+    .controls {
+        flex-direction: column!important;
+        padding: .5rem!important;
+    }
+}

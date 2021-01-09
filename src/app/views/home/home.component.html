@@ -1,0 +1,20 @@
+<div class="screen-card">
+    <div class="head">
+        Connexion réussie
+    </div>
+    <div class="content">
+        <app-loading *ngIf="loading"></app-loading>
+        <img *ngIf="!loading" class="user-image" src="../../../assets/images/profile.jpg" alt="" />
+        <div *ngIf="!loading" class="text">
+            <div class="username">Veronica Donavald</div>
+            <div class="app-links">
+                <p><span>Backend: </span> <a href="https://github.com/Oracions2410">https://github</a></p>
+                <p><span>frontend: </span> <a href="https://github.com/Oracions2410">https://github.com/Oracions2410</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button *ngIf="!loading" class="custom-btn delete-btn">Supprimer</button>
+        <button *ngIf="!loading" class="custom-btn logout-btn">Deconnexion</button>
+    </div>
+</div>
