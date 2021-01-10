@@ -1,0 +1,15 @@
+@import '../../../assets/scss/partials/variables';
+
+.screen-card {
+  .head {
+    p {
+      font-size: 1.2rem!important;
+      font-family: $roboto;
+      span {
+        color: $blue;
+        font-weight: bold;
+        text-transform: none;
+      }
+    }
+  }
+}

@@ -21,11 +21,24 @@ form {
       margin-left: 5%;
       outline: none;
       height: 30px;
-      border: 1px solid $dark;
+      border: 1px solid $blue;
       background-color: $white;
       color: #444;
       font-size: 16px;
       padding: 0 3px;
     }
   }
+}
+form {
+  margin-top:0;
+}
+
+.custom-alert.hide {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.custom-btn.google {
+  padding: 10px;
+  color: #444;
 }

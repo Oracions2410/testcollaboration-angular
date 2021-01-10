@@ -6,15 +6,16 @@
     <div [class]="loading ? 'content' : 'content start'">
         <app-loading *ngIf="loading"></app-loading>
         <div *ngIf="!loading && errors.status" class="custom-alert errors">{{errors.message}}</div>
+        <div *ngIf="loading || !errors.status" class="custom-alert errors hide"></div>
         <form *ngIf="!loading" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="group">
                 <label>Adresse Email</label>
-                <input type="text" [formControlName]="'email'"/>
+                <input (focus)="resetErrors()" type="text" [formControlName]="'email'"/>
             </div>
 
             <div class="group">
                 <label>Mot de passe</label>
-                <input type="password" [formControlName]="'password'" />
+                <input (focus)="resetErrors()" type="password" [formControlName]="'password'" />
             </div>
 
             <div class="group">
@@ -23,6 +24,7 @@
         </form>
     </div>
     <div class="controls">
-        <button class="custom-btn default-btn">Connexion/Inscription avec google</button>
+        <button *ngIf="!loading" (click)="googleLogin()" class="custom-btn google">Connexion/Inscription avec google</button>
+        <p *ngIf="loading">Chargemement en cours ....</p>
     </div>
 </div>

@@ -1,12 +1,13 @@
 <div class="screen-card">
     <div class="head">
         Connexion réussie
+        <p>votre Mot de passe par default est: <span>oracions</span></p>
     </div>
     <div class="content">
         <app-loading *ngIf="loading"></app-loading>
-        <img *ngIf="!loading" class="user-image" src="../../../assets/images/profile.jpg" alt="" />
+        <img *ngIf="!loading" class="user-image" [src]="user && user.avatar ? user.avatar: null" alt="" />
         <div *ngIf="!loading" class="text">
-            <div class="username">Veronica Donavald</div>
+            <div class="username">{{ user && user.name ? user.name : null}}</div>
             <div class="app-links">
                 <p><span>Backend: </span> <a href="https://github.com/Oracions2410">https://github</a></p>
                 <p><span>frontend: </span> <a href="https://github.com/Oracions2410">https://github.com/Oracions2410</a></p>
@@ -14,7 +15,7 @@
         </div>
     </div>
     <div class="controls">
-        <button *ngIf="!loading" class="custom-btn delete-btn">Supprimer</button>
-        <button *ngIf="!loading" class="custom-btn logout-btn">Deconnexion</button>
+        <button *ngIf="!loading" (click)="deleteAccount()" class="custom-btn delete-btn">Supprimer</button>
+        <button *ngIf="!loading" (click)="logout()" class="custom-btn logout-btn">Deconnexion</button>
     </div>
 </div>
